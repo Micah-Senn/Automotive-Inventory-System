@@ -251,6 +251,7 @@ namespace Software1
             this.Controls.Add(this.inHouseRadio);
             this.Controls.Add(this.addPartLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "addPart";
             this.Text = "Add Part";
             this.Load += new System.EventHandler(this.addPart_Load);

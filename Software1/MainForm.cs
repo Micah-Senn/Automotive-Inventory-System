@@ -20,7 +20,7 @@ namespace Software1
         }
 
 
-        private void Form1_Load()
+        public void Form1_Load()
         {
 
             Software1.Inventory.Populate();
@@ -50,7 +50,7 @@ namespace Software1
 
         private void addPart_Click(object sender, EventArgs e)
         {
-            addPart addPart = new addPart(this);  //navigates to add part screen
+            addPart addPart = new addPart();  //navigates to add part screen
             addPart.ShowDialog();
         }
 
@@ -62,13 +62,21 @@ namespace Software1
 
         private void modifyPart_Click(object sender, EventArgs e)
         {
-            modifyPart modifyPart = new modifyPart(this);  //navigates to modify part screen
-            modifyPart.ShowDialog();
+            if (partGridView.CurrentRow.DataBoundItem.GetType() == typeof(Software1.InHousePart))
+            {
+                InHousePart inHousePart = (InHousePart)partGridView.CurrentRow.DataBoundItem;
+                new modifyPart(inHousePart).ShowDialog();
+            }
+            else
+            {
+                OutsourcedPart outsourcedPart = (OutsourcedPart)partGridView.CurrentRow.DataBoundItem;
+                new modifyPart(outsourcedPart).ShowDialog();
+            }
         }
 
         private void modifyProduct_Click(object sender, EventArgs e)
         {
-            modifyProduct modifyProduct = new modifyProduct(this); //navigates to modify product screen
+            modifyProduct modifyProduct = new modifyProduct(); //navigates to modify product screen
             modifyProduct.ShowDialog();
         }
 

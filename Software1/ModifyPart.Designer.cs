@@ -29,20 +29,20 @@ namespace Software1
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxModifyPartId = new System.Windows.Forms.TextBox();
-            this.textBoxModifyPartName = new System.Windows.Forms.TextBox();
-            this.textBoxModifyPartInv = new System.Windows.Forms.TextBox();
-            this.textBoxModifyPartPrice = new System.Windows.Forms.TextBox();
-            this.textBoxModifyPartMin = new System.Windows.Forms.TextBox();
-            this.textBoxModifyPartMax = new System.Windows.Forms.TextBox();
-            this.textBoxModifyCompany = new System.Windows.Forms.TextBox();
+            this.textBoxPartID = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxInventory = new System.Windows.Forms.TextBox();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.textBoxMin = new System.Windows.Forms.TextBox();
+            this.textBoxMax = new System.Windows.Forms.TextBox();
+            this.textBoxInOut = new System.Windows.Forms.TextBox();
             this.modifyPartLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelInOut = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.inHouseRadio = new System.Windows.Forms.RadioButton();
             this.outsourcedRadio = new System.Windows.Forms.RadioButton();
@@ -50,55 +50,66 @@ namespace Software1
             this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBoxModifyPartId
+            // textBoxPartID
             // 
-            this.textBoxModifyPartId.Location = new System.Drawing.Point(125, 56);
-            this.textBoxModifyPartId.Name = "textBoxModifyPartId";
-            this.textBoxModifyPartId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxModifyPartId.TabIndex = 3;
-            this.textBoxModifyPartId.TextChanged += new System.EventHandler(this.textBoxModifyPartId_TextChanged);
+            this.textBoxPartID.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBoxPartID.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxPartID.Enabled = false;
+            this.textBoxPartID.Location = new System.Drawing.Point(125, 56);
+            this.textBoxPartID.Name = "textBoxPartID";
+            this.textBoxPartID.ReadOnly = true;
+            this.textBoxPartID.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPartID.TabIndex = 3;
+            this.textBoxPartID.TabStop = false;
+            this.textBoxPartID.TextChanged += new System.EventHandler(this.textBoxModifyPartId_TextChanged);
             // 
-            // textBoxModifyPartName
+            // textBoxName
             // 
-            this.textBoxModifyPartName.Location = new System.Drawing.Point(125, 82);
-            this.textBoxModifyPartName.Name = "textBoxModifyPartName";
-            this.textBoxModifyPartName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxModifyPartName.TabIndex = 4;
+            this.textBoxName.Location = new System.Drawing.Point(125, 82);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxName.TabIndex = 4;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxModifyPartName_TextChanged);
             // 
-            // textBoxModifyPartInv
+            // textBoxInventory
             // 
-            this.textBoxModifyPartInv.Location = new System.Drawing.Point(125, 108);
-            this.textBoxModifyPartInv.Name = "textBoxModifyPartInv";
-            this.textBoxModifyPartInv.Size = new System.Drawing.Size(100, 20);
-            this.textBoxModifyPartInv.TabIndex = 5;
+            this.textBoxInventory.Location = new System.Drawing.Point(125, 108);
+            this.textBoxInventory.Name = "textBoxInventory";
+            this.textBoxInventory.Size = new System.Drawing.Size(100, 20);
+            this.textBoxInventory.TabIndex = 5;
+            this.textBoxInventory.TextChanged += new System.EventHandler(this.textBoxModifyPartInv_TextChanged);
             // 
-            // textBoxModifyPartPrice
+            // textBoxPrice
             // 
-            this.textBoxModifyPartPrice.Location = new System.Drawing.Point(125, 134);
-            this.textBoxModifyPartPrice.Name = "textBoxModifyPartPrice";
-            this.textBoxModifyPartPrice.Size = new System.Drawing.Size(100, 20);
-            this.textBoxModifyPartPrice.TabIndex = 6;
+            this.textBoxPrice.Location = new System.Drawing.Point(125, 134);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPrice.TabIndex = 6;
+            this.textBoxPrice.TextChanged += new System.EventHandler(this.textBoxModifyPartPrice_TextChanged);
             // 
-            // textBoxModifyPartMin
+            // textBoxMin
             // 
-            this.textBoxModifyPartMin.Location = new System.Drawing.Point(125, 160);
-            this.textBoxModifyPartMin.Name = "textBoxModifyPartMin";
-            this.textBoxModifyPartMin.Size = new System.Drawing.Size(69, 20);
-            this.textBoxModifyPartMin.TabIndex = 7;
+            this.textBoxMin.Location = new System.Drawing.Point(125, 160);
+            this.textBoxMin.Name = "textBoxMin";
+            this.textBoxMin.Size = new System.Drawing.Size(69, 20);
+            this.textBoxMin.TabIndex = 7;
+            this.textBoxMin.TextChanged += new System.EventHandler(this.textBoxModifyPartMin_TextChanged);
             // 
-            // textBoxModifyPartMax
+            // textBoxMax
             // 
-            this.textBoxModifyPartMax.Location = new System.Drawing.Point(252, 160);
-            this.textBoxModifyPartMax.Name = "textBoxModifyPartMax";
-            this.textBoxModifyPartMax.Size = new System.Drawing.Size(69, 20);
-            this.textBoxModifyPartMax.TabIndex = 8;
+            this.textBoxMax.Location = new System.Drawing.Point(252, 160);
+            this.textBoxMax.Name = "textBoxMax";
+            this.textBoxMax.Size = new System.Drawing.Size(69, 20);
+            this.textBoxMax.TabIndex = 8;
+            this.textBoxMax.TextChanged += new System.EventHandler(this.textBoxModifyPartMax_TextChanged);
             // 
-            // textBoxModifyCompany
+            // textBoxInOut
             // 
-            this.textBoxModifyCompany.Location = new System.Drawing.Point(125, 186);
-            this.textBoxModifyCompany.Name = "textBoxModifyCompany";
-            this.textBoxModifyCompany.Size = new System.Drawing.Size(100, 20);
-            this.textBoxModifyCompany.TabIndex = 9;
+            this.textBoxInOut.Location = new System.Drawing.Point(125, 186);
+            this.textBoxInOut.Name = "textBoxInOut";
+            this.textBoxInOut.Size = new System.Drawing.Size(100, 20);
+            this.textBoxInOut.TabIndex = 9;
+            this.textBoxInOut.TextChanged += new System.EventHandler(this.textBoxInOut_TextChanged);
             // 
             // modifyPartLabel
             // 
@@ -154,14 +165,14 @@ namespace Software1
             this.label6.TabIndex = 12;
             this.label6.Text = "Min";
             // 
-            // label7
+            // labelInOut
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 189);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Company Name";
+            this.labelInOut.AutoSize = true;
+            this.labelInOut.Location = new System.Drawing.Point(37, 189);
+            this.labelInOut.Name = "labelInOut";
+            this.labelInOut.Size = new System.Drawing.Size(82, 13);
+            this.labelInOut.TabIndex = 13;
+            this.labelInOut.Text = "Company Name";
             // 
             // label8
             // 
@@ -182,6 +193,7 @@ namespace Software1
             this.inHouseRadio.TabStop = true;
             this.inHouseRadio.Text = "In-House";
             this.inHouseRadio.UseVisualStyleBackColor = true;
+            this.inHouseRadio.CheckedChanged += new System.EventHandler(this.inHouseRadio_CheckedChanged);
             // 
             // outsourcedRadio
             // 
@@ -193,6 +205,7 @@ namespace Software1
             this.outsourcedRadio.TabStop = true;
             this.outsourcedRadio.Text = "Outsourced";
             this.outsourcedRadio.UseVisualStyleBackColor = true;
+            this.outsourcedRadio.CheckedChanged += new System.EventHandler(this.outsourcedRadio_CheckedChanged);
             // 
             // ButtonModifyPartSave
             // 
@@ -227,21 +240,22 @@ namespace Software1
             this.Controls.Add(this.outsourcedRadio);
             this.Controls.Add(this.inHouseRadio);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.labelInOut);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.modifyPartLabel);
-            this.Controls.Add(this.textBoxModifyCompany);
-            this.Controls.Add(this.textBoxModifyPartMax);
-            this.Controls.Add(this.textBoxModifyPartMin);
-            this.Controls.Add(this.textBoxModifyPartPrice);
-            this.Controls.Add(this.textBoxModifyPartInv);
-            this.Controls.Add(this.textBoxModifyPartName);
-            this.Controls.Add(this.textBoxModifyPartId);
+            this.Controls.Add(this.textBoxInOut);
+            this.Controls.Add(this.textBoxMax);
+            this.Controls.Add(this.textBoxMin);
+            this.Controls.Add(this.textBoxPrice);
+            this.Controls.Add(this.textBoxInventory);
+            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.textBoxPartID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "modifyPart";
             this.Text = "Modify Part";
             this.Load += new System.EventHandler(this.ModifyPart_Load);
@@ -252,20 +266,20 @@ namespace Software1
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxModifyPartId;
-        private System.Windows.Forms.TextBox textBoxModifyPartName;
-        private System.Windows.Forms.TextBox textBoxModifyPartInv;
-        private System.Windows.Forms.TextBox textBoxModifyPartPrice;
-        private System.Windows.Forms.TextBox textBoxModifyPartMin;
-        private System.Windows.Forms.TextBox textBoxModifyPartMax;
-        private System.Windows.Forms.TextBox textBoxModifyCompany;
+        private System.Windows.Forms.TextBox textBoxPartID;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxInventory;
+        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.TextBox textBoxMin;
+        private System.Windows.Forms.TextBox textBoxMax;
+        private System.Windows.Forms.TextBox textBoxInOut;
         private System.Windows.Forms.Label modifyPartLabel;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelInOut;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton inHouseRadio;
         private System.Windows.Forms.RadioButton outsourcedRadio;

@@ -11,21 +11,21 @@ namespace Software1
         private int machineID;
         public int MachineID { get; set; }
         public InHousePart() { }
-        public InHousePart(int partID, string name, decimal price, int inStock, int min, int max)
+        public InHousePart(int partID, string name, decimal price, int inv, int min, int max)
         {
             PartID = partID;
             Name = name;
-            Current_Inventory = inStock;
+            Current_Inventory = inv;
             Price = price.ToString();
             Min = min;
             Max = max;
         }
-        public InHousePart(int partID, string name, decimal price, int inStock, int min, int max, int machineID)
+        public InHousePart(int partID, string name, decimal price, int inv, int min, int max, int machineID)
         {
             PartID = partID;
             Name = name;
             Price = price.ToString();
-            Current_Inventory = inStock;
+            Current_Inventory = inv;
             Min = min;
             Max = max;
             MachineID = machineID;

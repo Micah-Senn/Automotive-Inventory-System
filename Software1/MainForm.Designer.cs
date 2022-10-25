@@ -95,6 +95,7 @@ namespace Software1
             this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productGridView.Location = new System.Drawing.Point(689, 115);
             this.productGridView.Name = "productGridView";
+            this.productGridView.ReadOnly = true;
             this.productGridView.RowHeadersVisible = false;
             this.productGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.productGridView.Size = new System.Drawing.Size(572, 158);
@@ -247,6 +248,7 @@ namespace Software1
             this.Controls.Add(this.productSearch);
             this.Controls.Add(this.partSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "mainForm";
             this.Text = "Main Screen";
             this.Load += new System.EventHandler(this.mainForm_Load);

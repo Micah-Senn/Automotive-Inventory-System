@@ -49,13 +49,13 @@ namespace Software1
             set { textBoxInOut.Text = value; }
         }
 
-        public addPart(mainForm mf)
+        public addPart()
         {
             InitializeComponent();
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // cancel button closes document
         {
             this.Close();
         }
@@ -64,21 +64,21 @@ namespace Software1
         {
            if (TextBoxMin > TextBoxMax)
             {
-                MessageBox.Show("Minimum cannot be greater than the maximum.");
+                MessageBox.Show("Minimum cannot be greater than the maximum."); 
                 return;
             }
 
             if (inHouseRadio.Checked)
             {
                 
-                InHousePart inHouse = new InHousePart(TextBoxPartID, TextBoxPartName, TextBoxPrice, TextBoxInventory,  TextBoxMin, TextBoxMax, int.Parse(TextBoxInOut));
-                Inventory.AddPart(inHouse);
+                InHousePart inHousePart = new InHousePart(TextBoxPartID, TextBoxPartName, TextBoxPrice, TextBoxInventory,  TextBoxMin, TextBoxMax, int.Parse(TextBoxInOut));
+                Inventory.AddPart(inHousePart);
             }
             
              else
              {
-                 OutsourcedPart outsourced = new OutsourcedPart( TextBoxPartID, TextBoxPartName, TextBoxPrice, TextBoxInventory, TextBoxMin, TextBoxMax, TextBoxInOut);
-                 Inventory.AddPart(outsourced);
+                 OutsourcedPart outsourcedPart = new OutsourcedPart(TextBoxPartID, TextBoxPartName, TextBoxPrice, TextBoxInventory, TextBoxMin, TextBoxMax, TextBoxInOut);
+                 Inventory.AddPart(outsourcedPart);
              }
              this.Close();
         }

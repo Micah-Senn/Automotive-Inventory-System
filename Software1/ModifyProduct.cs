@@ -12,11 +12,11 @@ namespace Software1
 {
     public partial class modifyProduct : Form
     {
-        mainForm mnform;
-        public modifyProduct(mainForm mf)
+        
+        public modifyProduct()
         {
             InitializeComponent();
-            this.mnform = mf;
+           
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -41,14 +41,13 @@ namespace Software1
 
         private void button5_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in mnform.productGridView.SelectedRows)
-            {
-                mnform.productGridView.Rows.RemoveAt(row.Index);
-            }
-            foreach (DataGridViewRow row in mnform.productGridView.SelectedRows)
-
-                mnform.productGridView.Rows.Add(textBoxModifyProdId.Text, textBoxModifyProdName.Text, textBoxModifyProdInv.Text, textBoxModifyProdPrice.Text);
+            
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

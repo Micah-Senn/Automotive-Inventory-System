@@ -202,6 +202,7 @@ namespace Software1
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(395, 140);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridView2
             // 
@@ -220,8 +221,12 @@ namespace Software1
             // 
             // textBoxModifyProdId
             // 
+            this.textBoxModifyProdId.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBoxModifyProdId.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxModifyProdId.Enabled = false;
             this.textBoxModifyProdId.Location = new System.Drawing.Point(151, 132);
             this.textBoxModifyProdId.Name = "textBoxModifyProdId";
+            this.textBoxModifyProdId.ReadOnly = true;
             this.textBoxModifyProdId.Size = new System.Drawing.Size(150, 20);
             this.textBoxModifyProdId.TabIndex = 1;
             this.textBoxModifyProdId.TextChanged += new System.EventHandler(this.textBoxModifyProdId_TextChanged);
@@ -292,6 +297,7 @@ namespace Software1
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "modifyProduct";
             this.Text = "Modify Product";
             this.Load += new System.EventHandler(this.ModifyProduct_Load);
