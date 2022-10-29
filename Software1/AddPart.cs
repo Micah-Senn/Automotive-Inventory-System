@@ -13,7 +13,7 @@ namespace Software1
     public partial class addPart : Form
     {
         public int TextBoxPartID
-        {
+        { 
             get { return int.Parse(textBoxPartID.Text); }
             set { textBoxPartID.Text = value.ToString(); }
         }
@@ -64,7 +64,13 @@ namespace Software1
         {
            if (TextBoxMin > TextBoxMax)
             {
-                MessageBox.Show("Minimum cannot be greater than the maximum."); 
+                MessageBox.Show("Minimum cannot be greater than the maximum.", "Invalid entry"); 
+                return;
+            }
+
+            if (TextBoxMin > TextBoxInventory || TextBoxInventory > TextBoxMax)
+            {
+                MessageBox.Show("Inventory must be between minimum and maximum");
                 return;
             }
 
@@ -80,6 +86,7 @@ namespace Software1
                  OutsourcedPart outsourcedPart = new OutsourcedPart(TextBoxPartID, TextBoxPartName, TextBoxPrice, TextBoxInventory, TextBoxMin, TextBoxMax, TextBoxInOut);
                  Inventory.AddPart(outsourcedPart);
              }
+
              this.Close();
         }
 
@@ -92,7 +99,7 @@ namespace Software1
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(textBoxPartID.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numerical values.");
+                MessageBox.Show("Please enter only numerical values.", "Invalid entry");
                 textBoxPartID.Text = textBoxPartID.Text.Remove(textBoxPartID.Text.Length - 1);
             }
         }
@@ -106,16 +113,16 @@ namespace Software1
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(textBoxInventory.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numerical values.");
+                MessageBox.Show("Please enter only numerical values.", "Invalid entry");
                 textBoxInventory.Text = textBoxInventory.Text.Remove(textBoxInventory.Text.Length - 1);
             }
         }
 
         private void textBoxPrice_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxPrice.Text, "[^0-9]"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxPrice.Text, "[^0-9.]"))
             {
-                MessageBox.Show("Please enter only numerical values.");
+                MessageBox.Show("Please enter only numerical values.", "Invalid entry");
             textBoxPrice.Text = textBoxPrice.Text.Remove(textBoxPrice.Text.Length - 1);
             }
         }
@@ -124,7 +131,7 @@ namespace Software1
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(textBoxMin.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numerical values.");
+                MessageBox.Show("Please enter only numerical values.", "Invalid entry");
                 textBoxMin.Text = textBoxMin.Text.Remove(textBoxMin.Text.Length - 1);
             }
         }
@@ -136,7 +143,7 @@ namespace Software1
                 if (System.Text.RegularExpressions.Regex.IsMatch(textBoxInOut.Text, "[^0-9]"))
                 {
 
-                    MessageBox.Show("Please enter only numerical values for Machine ID");
+                    MessageBox.Show("Please enter only numerical values", "Invalid entry");
                     textBoxInOut.Text = textBoxInOut.Text.Remove(textBoxInOut.Text.Length - 1);
                 }
             }
@@ -149,7 +156,7 @@ namespace Software1
             if (System.Text.RegularExpressions.Regex.IsMatch(textBoxMax.Text, "[^0-9]"))
             {
 
-                MessageBox.Show("Please enter only numerical values.");
+                MessageBox.Show("Please enter only numerical values.", "Invalid entry");
                 textBoxMax.Text = textBoxMax.Text.Remove(textBoxMax.Text.Length - 1);
             }
         }

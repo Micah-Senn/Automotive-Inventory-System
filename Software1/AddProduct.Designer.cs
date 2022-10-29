@@ -30,8 +30,8 @@ namespace Software1
         private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.associatedPartsGrid = new System.Windows.Forms.DataGridView();
+            this.partGridView = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.modifyProductLabel = new System.Windows.Forms.Label();
@@ -52,8 +52,8 @@ namespace Software1
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.associatedPartsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -63,26 +63,44 @@ namespace Software1
             this.textBox1.Size = new System.Drawing.Size(203, 20);
             this.textBox1.TabIndex = 7;
             // 
-            // dataGridView2
+            // associatedPartsGrid
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(628, 264);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(395, 140);
-            this.dataGridView2.TabIndex = 11;
+            this.associatedPartsGrid.AllowUserToAddRows = false;
+            this.associatedPartsGrid.AllowUserToResizeColumns = false;
+            this.associatedPartsGrid.AllowUserToResizeRows = false;
+            this.associatedPartsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.associatedPartsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.associatedPartsGrid.Location = new System.Drawing.Point(421, 264);
+            this.associatedPartsGrid.Name = "associatedPartsGrid";
+            this.associatedPartsGrid.ReadOnly = true;
+            this.associatedPartsGrid.RowHeadersVisible = false;
+            this.associatedPartsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.associatedPartsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.associatedPartsGrid.Size = new System.Drawing.Size(602, 140);
+            this.associatedPartsGrid.TabIndex = 11;
+            this.associatedPartsGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.associatedPartsGrid_CellContentClick);
             // 
-            // dataGridView1
+            // partGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(628, 71);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(395, 140);
-            this.dataGridView1.TabIndex = 9;
+            this.partGridView.AllowUserToAddRows = false;
+            this.partGridView.AllowUserToResizeColumns = false;
+            this.partGridView.AllowUserToResizeRows = false;
+            this.partGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.partGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.partGridView.Location = new System.Drawing.Point(421, 71);
+            this.partGridView.Name = "partGridView";
+            this.partGridView.ReadOnly = true;
+            this.partGridView.RowHeadersVisible = false;
+            this.partGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.partGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.partGridView.Size = new System.Drawing.Size(602, 140);
+            this.partGridView.TabIndex = 9;
+            this.partGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.partGridView_CellContentClick);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(625, 248);
+            this.label9.Location = new System.Drawing.Point(418, 248);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(167, 13);
             this.label9.TabIndex = 30;
@@ -91,7 +109,7 @@ namespace Software1
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(625, 55);
+            this.label8.Location = new System.Drawing.Point(418, 55);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 13);
             this.label8.TabIndex = 29;
@@ -137,6 +155,7 @@ namespace Software1
             this.button3.TabIndex = 12;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -146,6 +165,7 @@ namespace Software1
             this.button2.TabIndex = 10;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -164,6 +184,7 @@ namespace Software1
             this.textBoxProductMax.Name = "textBoxProductMax";
             this.textBoxProductMax.Size = new System.Drawing.Size(50, 20);
             this.textBoxProductMax.TabIndex = 6;
+            this.textBoxProductMax.TextChanged += new System.EventHandler(this.textBoxProductMax_TextChanged);
             // 
             // textBoxProductMin
             // 
@@ -171,6 +192,7 @@ namespace Software1
             this.textBoxProductMin.Name = "textBoxProductMin";
             this.textBoxProductMin.Size = new System.Drawing.Size(50, 20);
             this.textBoxProductMin.TabIndex = 5;
+            this.textBoxProductMin.TextChanged += new System.EventHandler(this.textBoxProductMin_TextChanged);
             // 
             // textBoxProductPrice
             // 
@@ -178,6 +200,7 @@ namespace Software1
             this.textBoxProductPrice.Name = "textBoxProductPrice";
             this.textBoxProductPrice.Size = new System.Drawing.Size(150, 20);
             this.textBoxProductPrice.TabIndex = 4;
+            this.textBoxProductPrice.TextChanged += new System.EventHandler(this.textBoxProductPrice_TextChanged);
             // 
             // textBoxProductInventory
             // 
@@ -185,6 +208,7 @@ namespace Software1
             this.textBoxProductInventory.Name = "textBoxProductInventory";
             this.textBoxProductInventory.Size = new System.Drawing.Size(150, 20);
             this.textBoxProductInventory.TabIndex = 3;
+            this.textBoxProductInventory.TextChanged += new System.EventHandler(this.textBoxProductInventory_TextChanged);
             // 
             // textBoxProductName
             // 
@@ -192,6 +216,7 @@ namespace Software1
             this.textBoxProductName.Name = "textBoxProductName";
             this.textBoxProductName.Size = new System.Drawing.Size(150, 20);
             this.textBoxProductName.TabIndex = 2;
+            this.textBoxProductName.TextChanged += new System.EventHandler(this.textBoxProductName_TextChanged);
             // 
             // textBoxProductId
             // 
@@ -281,8 +306,8 @@ namespace Software1
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.associatedPartsGrid);
+            this.Controls.Add(this.partGridView);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.modifyProductLabel);
@@ -295,8 +320,8 @@ namespace Software1
             this.MaximizeBox = false;
             this.Name = "addProduct";
             this.Text = "Add Product";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.associatedPartsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,8 +330,8 @@ namespace Software1
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView associatedPartsGrid;
+        private System.Windows.Forms.DataGridView partGridView;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label modifyProductLabel;

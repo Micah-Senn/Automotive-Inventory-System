@@ -70,10 +70,14 @@ namespace Software1
             this.productSearch.TabIndex = 1;
             this.productSearch.Text = "Search";
             this.productSearch.UseVisualStyleBackColor = true;
+            this.productSearch.Click += new System.EventHandler(this.productSearch_Click);
             // 
             // partGridView
             // 
             this.partGridView.AllowUserToAddRows = false;
+            this.partGridView.AllowUserToDeleteRows = false;
+            this.partGridView.AllowUserToResizeColumns = false;
+            this.partGridView.AllowUserToResizeRows = false;
             this.partGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.partGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -91,6 +95,9 @@ namespace Software1
             // productGridView
             // 
             this.productGridView.AllowUserToAddRows = false;
+            this.productGridView.AllowUserToDeleteRows = false;
+            this.productGridView.AllowUserToResizeColumns = false;
+            this.productGridView.AllowUserToResizeRows = false;
             this.productGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productGridView.Location = new System.Drawing.Point(689, 115);
@@ -221,6 +228,7 @@ namespace Software1
             this.partSearchBox.Name = "partSearchBox";
             this.partSearchBox.Size = new System.Drawing.Size(234, 20);
             this.partSearchBox.TabIndex = 0;
+            this.partSearchBox.TextChanged += new System.EventHandler(this.partSearchBox_TextChanged);
             // 
             // inventoryBindingSource
             // 

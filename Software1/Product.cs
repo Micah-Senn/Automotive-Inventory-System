@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Software1
 {
-    class Product
+    public class Product
     {
         public BindingList<Part> AssociatedParts = new BindingList<Part>();
         private int productID;
@@ -54,7 +54,7 @@ namespace Software1
         {
             AssociatedParts.Add(part);
         }
-        public bool RemoveAssociatedPart(int partID)
+        /*public bool RemoveAssociatedPart(int partID)
         {
             bool success = false;
             foreach (Part part in AssociatedParts)
@@ -70,8 +70,8 @@ namespace Software1
                 }
             }
             return success;
-        }
-        public Part LookupAssociatedPart(int partID)
+        }*/
+        /*public Part LookupAssociatedPart(int partID)
         {
             foreach (Part part in AssociatedParts)
             {
@@ -82,6 +82,6 @@ namespace Software1
             }
             InHousePart emptyInHousePart = new InHousePart();
             return emptyInHousePart;
-        }
+        }*/
     }
 }

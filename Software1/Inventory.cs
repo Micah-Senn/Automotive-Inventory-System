@@ -118,13 +118,13 @@ namespace Software1
 
         }
 
-        // Parts Methods
+       
         public static void AddPart(Part part)
         {
             Parts.Add(part);
         }
 
-        // TO TEST
+        
         public bool DeletePart(Part part)
         {
             try
